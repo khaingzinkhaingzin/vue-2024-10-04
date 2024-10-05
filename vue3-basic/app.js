@@ -8,6 +8,15 @@ const app = Vue.createApp({
         }
     },
     methods: {
+        mouseoverHandler(event, data) {
+            console.log("mouse over is working", event, data); 
+        },
+        mouseleaveHandler(event) {
+            console.log("mouse leave is working", event); 
+        },
+        dblclickHandler(event) {
+            console.log("dblclick is working", event); 
+        }
     }
 });
 
