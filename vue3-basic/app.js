@@ -3,13 +3,11 @@ const app = Vue.createApp({
         return {
             title: "you don't know JS",
             author: "Ptr",
-            age: 28
+            age: 28,
+            showBook: true,
         }
     },
     methods: {
-        increaseAge() {
-            this.age++;
-        }
     }
 });
 
