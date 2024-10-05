@@ -19,6 +19,7 @@ const app = Vue.createApp({
                 }
             ],
             showBook: true,
+            link: "https://www.google.com/",
         }
     },
     methods: {
