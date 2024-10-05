@@ -21,18 +21,17 @@
     <h1>Vue3 Learning</h1>
     <div id="app">
         <div v-if="showBook">
-            <p>{{title}}</p>
-            <p>Author - {{author}}</p>
-            <p>Age - {{age}}</p>
+            <div v-for="book in books">
+                <p>Book - {{book.title}}</p>
+                <p>Author - {{book.author}}</p>
+                <p>Age - {{book.age}}</p>
+            </div>
         </div>
-        <button @click="showBook=!showBook">
-            <span v-if="showBook">hide</span>
-            <span v-if="!showBook">show</span>
-        </button>
 
-        <div class="box" @mouseover="mouseoverHandler($event, 'data')">Mouse Over</div>
-        <div class="box" @mouseleave="mouseleaveHandler">Mouse Leave</div>
-        <div class="box" @mouseleave="dblclickHandler">Double Click</div>
+        <button @click="showBook=!showBook">
+            <span v-if="!showBook">show</span>
+            <span v-if="showBook">hide</span>
+        </button>
     </div>
 
     <script src="app.js"></script>
