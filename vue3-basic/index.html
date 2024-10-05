@@ -21,8 +21,8 @@
     <h1>Vue3 Learning</h1>
     <div id="app">
         <div v-if="showBook">
-            <ul v-for="book in books">
-                <li :class="{favorite: book.isFav}">
+            <ul v-for="book in filteredBooks">
+                <li :class="{favorite: book.isFav}" @click="book.isFav=!book.isFav">
                     <img :src="book.img" alt="" width="100px" height="100px">
                     <p>Book - {{book.title}}</p>
                     <p>Author - {{book.author}}</p>
