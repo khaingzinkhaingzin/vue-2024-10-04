@@ -5,6 +5,11 @@ const app = Vue.createApp({
             author: "Ptr",
             age: 28
         }
+    },
+    methods: {
+        increaseAge() {
+            this.age++;
+        }
     }
 });
 
