@@ -9,11 +9,11 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <style>
-        .box {
-            background-color: aqua;
-            padding: 100px;
-            display: inline-block;
-            margin: 30px;
+        li {
+            list-style-type: none;
+        }
+        .favorite {
+            background-color: aquamarine;
         }
     </style>
 </head>
@@ -21,11 +21,14 @@
     <h1>Vue3 Learning</h1>
     <div id="app">
         <div v-if="showBook">
-            <div v-for="book in books">
-                <p>Book - {{book.title}}</p>
-                <p>Author - {{book.author}}</p>
-                <p>Age - {{book.age}}</p>
-            </div>
+            <ul v-for="book in books">
+                <li :class="{favorite: book.isFav}">
+                    <img :src="book.img" alt="" width="100px" height="100px">
+                    <p>Book - {{book.title}}</p>
+                    <p>Author - {{book.author}}</p>
+                    <p>Age - {{book.age}}</p>
+                </li>
+            </ul>
         </div>
 
         <button @click="showBook=!showBook">

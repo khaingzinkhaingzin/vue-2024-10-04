@@ -6,16 +6,22 @@ const app = Vue.createApp({
                     title: "you don't know JS",
                     author: "Ptr",
                     age: 27,
+                    img: "imgs/img1.png",
+                    isFav: true,
                 },
                 {
                     title: "Book 2",
                     author: "Sonya",
                     age: 28,
+                    img: "imgs/img2.jpeg",
+                    isFav: false,
                 },
                 {
                     title: "Book 2",
                     author: "Lookmhee",
                     age: 29,
+                    img: "imgs/img3.jpg",
+                    isFav: false,
                 }
             ],
             showBook: true,
