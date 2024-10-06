@@ -1,15 +1,16 @@
 <template>
   <div class="backdrop">
-    <div class="modal">
-        <h1>Custom Modal h1</h1>
-        <p>Custom Modal p</p>
+    <div class="modal" :class="{success: theme === 'success', delete: theme === 'delete'}">
+        <h1>{{ header }}</h1>
+        <p>{{ content }}</p>
+        <p>{{ theme }}</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-
+  props: ['header', 'content', 'theme']
 }
 </script>
 
@@ -28,7 +29,12 @@ export default {
     background-color: white;
     border-radius: 10px;
 }
-p {
-  color: rgb(82, 123, 182);
+.success {
+  background-color: rgb(100, 144, 35);
+  color: white;
+}
+.delete {
+  background-color: rgb(206, 96, 81);
+  color: white;
 }
 </style>

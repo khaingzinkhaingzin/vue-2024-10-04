@@ -1,8 +1,6 @@
 <template>
   <div>
-    <h1>App.vue h1</h1>
-    <p>App.vue p</p>
-    <CustomModal />
+    <CustomModal :header="header" :content="content" :theme="theme" />
   </div>
 </template>
 
@@ -11,7 +9,9 @@ import CustomModal from './components/CustomModal.vue'
 export default {
   data() {
     return {
-      title: "Hello World!",
+      header: "Login Success",
+      content: "Welcome user Ktz",
+      theme: "success",
     }
   },
   components: {
@@ -27,7 +27,5 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  color: violet;
-}
+
 </style>
