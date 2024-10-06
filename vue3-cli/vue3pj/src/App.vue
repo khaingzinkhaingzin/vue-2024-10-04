@@ -1,5 +1,7 @@
 <template>
   <div>
+    <h1>App.vue h1</h1>
+    <p>App.vue p</p>
     <CustomModal />
   </div>
 </template>
@@ -24,7 +26,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 h1 {
   color: violet;
 }

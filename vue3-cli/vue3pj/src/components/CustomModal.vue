@@ -1,7 +1,8 @@
 <template>
   <div class="backdrop">
     <div class="modal">
-        <p>Modal Content</p>
+        <h1>Custom Modal h1</h1>
+        <p>Custom Modal p</p>
     </div>
   </div>
 </template>
@@ -12,7 +13,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .backdrop {
     position: fixed;
     top: 0;
@@ -26,5 +27,8 @@ export default {
     margin: 100px auto;
     background-color: white;
     border-radius: 10px;
+}
+p {
+  color: rgb(82, 123, 182);
 }
 </style>
