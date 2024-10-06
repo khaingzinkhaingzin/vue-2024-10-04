@@ -1,6 +1,9 @@
 <template>
   <div>
-    <CustomModal :header="header" :content="content" :theme="theme" />
+    <div v-if="showModal">
+      <CustomModal :header="header" :content="content" :theme="theme" @close="showModal=false" />
+    </div>
+    <button @click="showModal=true">open modal</button>
   </div>
 </template>
 
@@ -12,6 +15,7 @@ export default {
       header: "Login Success",
       content: "Welcome user Ktz",
       theme: "success",
+      showModal: false,
     }
   },
   components: {
