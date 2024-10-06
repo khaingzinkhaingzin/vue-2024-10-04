@@ -1,12 +1,24 @@
 <template>
-  <h1>{{title}}</h1>
+  <div>
+    <CustomModal />
+  </div>
 </template>
 
 <script>
+import CustomModal from './components/CustomModal.vue'
 export default {
   data() {
     return {
       title: "Hello World!",
+    }
+  },
+  components: {
+    CustomModal,
+  },
+  methods: {
+    clickHandler() {
+      this.$refs.name.focus();
+      this.$refs.greet.textContent = "How are you?";
     }
   }
 }
