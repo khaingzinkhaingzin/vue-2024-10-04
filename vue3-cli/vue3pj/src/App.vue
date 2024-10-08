@@ -1,7 +1,16 @@
 <template>
   <div>
     <div v-if="showModal">
-      <CustomModal :header="header" :content="content" :theme="theme" @close="showModal=false" />
+      <CustomModal :theme="theme" @close="showModal=false">
+        <h1>Login Success</h1>
+        <p>Welcome User Ktz</p>
+
+        <!-- slot with name  -->
+        <template v-slot:links>
+          <a href="">Sign Up</a>
+          <a href="">Register</a>
+        </template>
+      </CustomModal>
     </div>
     <button @click="showModal=true">open modal</button>
   </div>

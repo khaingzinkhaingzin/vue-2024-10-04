@@ -1,16 +1,20 @@
 <template>
   <div class="backdrop" @click.self="closeModal">
     <div class="modal" :class="{success: theme === 'success', delete: theme === 'delete'}">
-        <h1>{{ header }}</h1>
-        <p>{{ content }}</p>
-        <p>{{ theme }}</p>
+        <slot>
+          default slot 
+          <!-- default slot will show when there is not passing html element for lot  -->
+        </slot>
+
+        <!-- show named slot  -->
+        <slot name="links" />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['header', 'content', 'theme', 'showmodal'],
+  props: ['theme', 'showmodal'],
   methods: {
     closeModal() {
       this.$emit("close");
