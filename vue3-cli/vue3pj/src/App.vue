@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="showModal">
+    <teleport to=".modal" v-if="showModal">
       <CustomModal :theme="theme" @close="showModal=false">
         <h1>Login Success</h1>
         <p>Welcome User Ktz</p>
@@ -11,7 +11,7 @@
           <a href="">Register</a>
         </template>
       </CustomModal>
-    </div>
+    </teleport>
     <button @click="showModal=true">open modal</button>
   </div>
 </template>
