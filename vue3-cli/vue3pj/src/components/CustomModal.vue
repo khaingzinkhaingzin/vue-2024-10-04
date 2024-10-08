@@ -5,9 +5,6 @@
           default slot 
           <!-- default slot will show when there is not passing html element for lot  -->
         </slot>
-
-        <!-- show named slot  -->
-        <slot name="links" />
     </div>
   </div>
 </template>

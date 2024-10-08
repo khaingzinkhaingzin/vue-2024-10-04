@@ -1,18 +1,18 @@
 <template>
   <div>
-    <teleport to=".modal" v-if="showModal">
+    <div v-if="showModal">
       <CustomModal :theme="theme" @close="showModal=false">
         <h1>Login Success</h1>
         <p>Welcome User Ktz</p>
-
-        <!-- slot with name  -->
-        <template v-slot:links>
-          <a href="">Sign Up</a>
-          <a href="">Register</a>
-        </template>
+      </CustomModal>      
+    </div>
+    <div v-if="showDeleteModal">
+      <CustomModal :theme="theme" @close="showDeleteModal=false">
+        <h1>Are you sure to delete?</h1>
       </CustomModal>
-    </teleport>
-    <button @click="showModal=true">open modal</button>
+    </div>
+    <button @click="showSuccessModalMethod">open modal</button>
+    <button @click="showDeleteModalMethod">delete</button>
   </div>
 </template>
 
@@ -21,10 +21,9 @@ import CustomModal from './components/CustomModal.vue'
 export default {
   data() {
     return {
-      header: "Login Success",
-      content: "Welcome user Ktz",
       theme: "success",
       showModal: false,
+      showDeleteModal: false,
     }
   },
   components: {
@@ -34,6 +33,14 @@ export default {
     clickHandler() {
       this.$refs.name.focus();
       this.$refs.greet.textContent = "How are you?";
+    },
+    showSuccessModalMethod() {
+      this.theme = 'success';
+      this.showModal = true;
+    },
+    showDeleteModalMethod() {
+      this.theme = 'delete';
+      this.showDeleteModal = true;
     }
   }
 }
