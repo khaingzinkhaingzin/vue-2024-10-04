@@ -6,16 +6,18 @@
     <div v-if="isPlaying">
       <Block :delay="delay" @endGame="endGame" />
     </div>
-    <p>Result is {{ score }}</p>
+    <Result :score="score" />
   </div>
 </template>
 
 <script>
 import Block from './components/Block.vue'
+import Result from './components/Result.vue'
 export default {
   name: 'App',
   components: {
     Block,
+    Result
   },
   data() {
     return {
