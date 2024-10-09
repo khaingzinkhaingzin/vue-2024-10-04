@@ -1,5 +1,5 @@
 <template>
-  <div class="block" v-if="showBlock">Click here {{ delay }}</div>
+  <div class="block" v-if="showBlock" @click="stopTimer">Click here {{ delay }}</div>
 </template>
 
 <script>
@@ -8,19 +8,27 @@ export default {
     data() {
       return {
         showBlock: false,
+        score: 0,
+        timer: null,
       }
     },
     mounted() { // when component has been injected into index.html
       setTimeout(() => {
         this.showBlock = true;
+        this.startTimer();
       }, this.delay);
     },
-    updated() { // when some data has updated
-      console.log('data updated');
-    },
-    unmounted() { // when component has been removed
-      console.log("component unmounted");
-      
+    methods: {
+      startTimer() {
+        this.timer = setInterval(() => {
+          this.score += 50;
+        }, 50);
+      },
+      stopTimer() {
+        clearInterval(this.timer);
+        console.log(this.score);
+        
+      }
     }
 }
 </script>
