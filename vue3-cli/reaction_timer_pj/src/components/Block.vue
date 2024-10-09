@@ -25,9 +25,8 @@ export default {
         }, 50);
       },
       stopTimer() {
-        clearInterval(this.timer);
-        console.log(this.score);
-        
+        clearInterval(this.timer);      
+        this.$emit("endGame", this.score)  
       }
     }
 }

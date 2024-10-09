@@ -4,8 +4,9 @@
     <button @click="start" :disabled="isPlaying">play</button>
 
     <div v-if="isPlaying">
-      <Block :delay="delay" />
+      <Block :delay="delay" @endGame="endGame" />
     </div>
+    <p>Result is {{ score }}</p>
   </div>
 </template>
 
@@ -20,12 +21,17 @@ export default {
     return {
       isPlaying: false,
       delay: null,
+      score: 0,
     }
   },
   methods: {
     start() {
       this.isPlaying = true;
       this.delay = 2000 + Math.random() * 5000; // between 2 second and 7 second
+    },
+    endGame(score) {
+      this.score = score;
+      
     }
   }
 }
